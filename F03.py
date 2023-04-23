@@ -52,15 +52,15 @@ def summonJin(data = userDataList):
         if jinType == 1:
             print('Memilih jin “Pengumpul”.')
             uname, password = jinAccount(data)
-            newDataList = updateUserDataList(uname, password, 'jin_pengumpul', userDataList)
-            newDataStr = updateUserData(uname, password, 'jin_pengumpul')
+            newDataList = updateDataList3(uname, password, 'jin_pengumpul', userDataList)
+            newDataStr = updateData3(uname, password, 'jin_pengumpul')
 
             return newDataList, newDataStr
 
         elif jinType == 2:
             print('Memilih jin “Pembangun”.')
             uname, password = jinAccount(data)
-            newDataList = updateUserDataList(uname, password, 'jin_pembangun', userDataList)
-            newDataStr = updateUserData(uname, password, 'jin_pembangun')
+            newDataList = updateDataList3(uname, password, 'jin_pembangun', userDataList)
+            newDataStr = updateData3(uname, password, 'jin_pembangun')
 
             return newDataList, newDataStr
