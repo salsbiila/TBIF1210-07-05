@@ -10,3 +10,7 @@ def bangun_candi(bahan, sum):
         bahan [3][2] -= air
         print("Candi berhasil dibangun.")
         print(f"Sisa candi yang perlu dibangun: {100-sum+1}.")
+
+def ubah_candi(x,y):
+    id = 
+    return updateDataList5 (id, jin_pembangun, pasir, batu, air, x,y) #cari cara update nya
