@@ -1,6 +1,8 @@
 from module import *
 from F03 import *
+from F04 import *
 from F05 import *
+from F16 import *
 
 file = open('user.csv', 'r')
 userData = file.read()
@@ -27,11 +29,14 @@ while playing:
     if userInput == 'summonjin':
         userDataList = summonJin(userDataSum, userDataList)
         userDataSum += 1
-        print(userDataList)
-        print(userDataSum)
+    
+    elif userInput == 'hapusjin':
+        userDataSum, userDataList, candiDataSum, candiDataList = hapusJin(userDataSum, userDataList, candiDataSum, candiDataList)
     
     elif userInput == 'ubahjin':     
         ubahJin(userDataSum, userDataList)
     
-    elif userInput == 'q':  # blm selesai
+    elif userInput == 'exit':
+        if exit():
+            print('masuk ke f14')
         playing = False

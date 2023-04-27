@@ -63,7 +63,6 @@ def updateDataList5(param1, param2, param3, param4, param5, dataSum, dataList):
     return newListData
 
 def deleteUser(uname, dataSum, dataList):
-    # Deleting di list
     deletionCount = 0
     for i in range(1, dataSum):
         if dataList[i][0] == uname:
@@ -78,7 +77,26 @@ def deleteUser(uname, dataSum, dataList):
             newListData[row] = list[i]
             row += 1
     
-    return newListData
+    newSum = dataSum - deletionCount
+    return newSum, newListData
+
+def deleteCandi(id, dataSum, dataList):
+    deletionCount = 0
+    for i in range(1, dataSum):
+        if dataList[i][0] == id:
+            dataList[i] = None
+            deletionCount += 1
+    
+    newListData = [['', '', '', '', ''] for i in range (dataSum-deletionCount)]
+    
+    row = 0
+    for i in range(dataSum):
+        if list[i] != None:
+            newListData[row] = list[i]
+            row += 1
+    
+    newSum = dataSum - deletionCount
+    return newSum, newListData
 
 def makeStr(sum, dataList, columnNum):
     dataStr = ''
