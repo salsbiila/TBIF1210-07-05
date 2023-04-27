@@ -18,6 +18,7 @@ def ubahJin(dataSum, dataList):
             if userInput == 'Y':
                 dataList[idx][2] = 'jin_pembangun'
 
+                print()
                 print('Jin telah berhasil diubah .')
 
         elif dataList[idx][2] == 'jin_pembangun':
@@ -26,6 +27,8 @@ def ubahJin(dataSum, dataList):
             if userInput == 'Y':
                 dataList[idx][2] = 'jin_pengumpul'
 
+                print()
                 print('Jin telah berhasil diubah.')
     else:
+        print()
         print('Tidak ada jin dengan username tersebut.')

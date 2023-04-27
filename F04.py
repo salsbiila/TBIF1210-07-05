@@ -10,6 +10,10 @@ def hapusJin(userDataSum, userDataList, candiDataSum, candiDataList):
 
             newCandiSum, newCandiDataList = deleteCandi(uname, candiDataSum, candiDataList)
 
+            print()
+            print('Jin telah berhasil dihapus dari alam gaib.')
+
             return newUserSum, newUserDataList, newCandiSum, newCandiDataList
     else:
+        print()
         print('Tidak ada jin dengan username tersebut.')
