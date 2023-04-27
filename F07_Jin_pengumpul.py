@@ -1,5 +1,5 @@
 import random 
-def kumpul_candi():
+def kumpul_candi(bahan):
     pasir = random.randint (1,5)
     batu = random.randint (1,5)
     air = random.randint (1,5)  

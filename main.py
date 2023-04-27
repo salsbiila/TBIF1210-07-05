@@ -2,6 +2,7 @@ from module import *
 from F03 import *
 from F04 import *
 from F05 import *
+from F06_jin_pembangun import *
 from F16 import *
 
 file = open('user.csv', 'r')
@@ -36,6 +37,8 @@ while playing:
     elif userInput == 'ubahjin':    #F05
         ubahJin(userDataSum, userDataList)
     
+    elif userInput == 'banguncandi': #F06
+        bahanDataSum = bangun_candi (bahanDataList, bahanDataSum)
     elif userInput == 'exit':   #F16
         if exit():
             print('masuk ke f14')

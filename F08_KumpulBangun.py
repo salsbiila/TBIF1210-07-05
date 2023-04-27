@@ -14,7 +14,7 @@ def kumpul():
         print (f'Jin menemukan total {hasil_kumpul [0]} pasir, {hasil_kumpul [1]} batu, dan {hasil_kumpul [2]} air.') 
     else :
         print('Kumpul gagal. Anda tidak punya jin pengumpul. Silahkan summon terlebih dahulu.')
-def bangun():
+def bangun(bahan, saveCandi):
     jumlah_jin_pembangun = 0 #asumsi sudah ada jin pembangun
     hasil_bangun = [0,0,0]
     for i in range (jumlah_jin_pembangun):

@@ -1,5 +1,6 @@
 import random 
-def bangun_candi():
+from module import*
+def bangun_candi(bahan, sum):
     pasir = random.randint (1,5)
     batu = random.randint (1,5)
     air = random.randint (1,5)
@@ -7,7 +8,5 @@ def bangun_candi():
         bahan [1][2] -= pasir  
         bahan [2][2] -= batu  
         bahan [3][2] -= air
-        rewrite_data("bahan_bangunan.csv", bahan)
-        saveCandi(username, pasir, batu, air)
         print("Candi berhasil dibangun.")
-        print(f"Sisa candi yang perlu dibangun: {100-(command.length(candi))}.")
+        print(f"Sisa candi yang perlu dibangun: {100-sum+1}.")
