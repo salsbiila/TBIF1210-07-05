@@ -26,17 +26,17 @@ playing = True
 while playing:
     userInput = input('>>> ')
 
-    if userInput == 'summonjin':
+    if userInput == 'summonjin':    #F03
         userDataList = summonJin(userDataSum, userDataList)
         userDataSum += 1
     
-    elif userInput == 'hapusjin':
+    elif userInput == 'hapusjin':   #F04
         userDataSum, userDataList, candiDataSum, candiDataList = hapusJin(userDataSum, userDataList, candiDataSum, candiDataList)
     
-    elif userInput == 'ubahjin':     
+    elif userInput == 'ubahjin':    #F05
         ubahJin(userDataSum, userDataList)
     
-    elif userInput == 'exit':
+    elif userInput == 'exit':   #F16
         if exit():
             print('masuk ke f14')
         playing = False
