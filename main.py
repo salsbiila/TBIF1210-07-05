@@ -25,10 +25,12 @@ while playing:
     userInput = input('>>> ')
 
     if userInput == 'summonjin':
-        userDataList, userData = summonJin(userDataSum, userDataList, userData)
+        userDataList = summonJin(userDataSum, userDataList)
         userDataSum += 1
+        print(userDataList)
+        print(userDataSum)
     
-    elif userInput == 'ubahjin':
+    elif userInput == 'ubahjin':     
         ubahJin(userDataSum, userDataList)
     
     elif userInput == 'q':  # blm selesai

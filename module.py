@@ -1,18 +1,11 @@
-file = open('user.csv', 'r')
-userData = file.read()
-file = open('candi.csv', 'r')
-candiData = file.read()
-file = open('bahan_bangunan.csv', 'r')
-bahanData = file.read()
-
-def rowCount(file):
+def rowCount(file): # hanya untuk di awal
     count = 1
     for letter in file:
         if letter == '\n':
             count += 1
     return count
 
-def makeList(file, delim = ';'):
+def makeList(file, delim = ';'): # hanya untuk membuat list pertama
     delimCount = 0
     for letter in file:
         if letter == delim:
@@ -45,53 +38,55 @@ def makeList(file, delim = ';'):
         currentLength += 1
     return listData
 
-def updateDataList3(param1, param2, param3, list, file = userData):
-    newListData = [['', '', ''] for i in range (rowCount(file)+1)]
-    for row in range(rowCount(file)):
+def updateDataList3(param1, param2, param3, dataSum, dataList):
+    newListData = [['', '', ''] for i in range (dataSum+1)]
+    for row in range(dataSum):
         for idx in range(3):    #idx adalah kolom
-            newListData[row][idx] = list[row][idx]
-    newListData[rowCount(file)][0] = param1
-    newListData[rowCount(file)][1] = param2
-    newListData[rowCount(file)][2] = param3
+            newListData[row][idx] = dataList[row][idx]
+    newListData[dataSum][0] = param1
+    newListData[dataSum][1] = param2
+    newListData[dataSum][2] = param3
 
     return newListData
 
-def updateData3(param1, param2, param3, file = userData):
-    file += f'\n{param1};{param2};{param3}'
-
-    return file
-
-def updateDataList5(param1, param2, param3, param4, param5, list, file = candiData):
-    newListData = [['', '', ''] for i in range (rowCount(file)+1)]
-    for row in range(rowCount(file)):
+def updateDataList5(param1, param2, param3, param4, param5, dataSum, dataList):
+    newListData = [['', '', ''] for i in range (dataSum+1)]
+    for row in range(dataSum):
         for idx in range(5):    #idx adalah kolom
-            newListData[row][idx] = list[row][idx]
-    newListData[rowCount(file)][0] = param1
-    newListData[rowCount(file)][1] = param2
-    newListData[rowCount(file)][2] = param3
-    newListData[rowCount(file)][3] = param4
-    newListData[rowCount(file)][4] = param5
+            newListData[row][idx] = dataList[row][idx]
+    newListData[dataSum][0] = param1
+    newListData[dataSum][1] = param2
+    newListData[dataSum][2] = param3
+    newListData[dataSum][3] = param4
+    newListData[dataSum][4] = param5
 
     return newListData
 
-def updateData5(param1, param2, param3, param4, param5, file = candiData):
-    file += f'\n{param1};{param2};{param3};{param4};{param5}'
-
-    return file
-
-def deleteUser(uname, list, file = userData):
+def deleteUser(uname, dataSum, dataList):
+    # Deleting di list
     deletionCount = 0
-    for i in range(1, rowCount(file)):
-        if list[i][0] == uname:
-            list[i] = None
+    for i in range(1, dataSum):
+        if dataList[i][0] == uname:
+            dataList[i] = None
             deletionCount += 1
     
-    newListData = [['', '', ''] for i in range (rowCount(file)-deletionCount)]
+    newListData = [['', '', ''] for i in range (dataSum-deletionCount)]
     
     row = 0
-    for i in range(rowCount(file)):
+    for i in range(dataSum):
         if list[i] != None:
             newListData[row] = list[i]
             row += 1
     
-    return newListData #belum selesai
+    return newListData
+
+def makeStr(sum, dataList, columnNum):
+    dataStr = ''
+    for row in range(sum):
+        for idx in range(columnNum):
+            if idx != columnNum-1:
+                dataStr += f'{dataList[row][idx]};'
+            else:
+                dataStr += f'{dataList[row][idx]}\n'
+    
+    return dataStr

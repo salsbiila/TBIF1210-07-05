@@ -1,16 +1,15 @@
 from module import *
 import time
 
-def unameExists(uname, sum, dataList):    # fungsi untuk mengecek apakah username sudah ada atau belum
-    for i in range(1, sum):
-        print(dataList[i][0])
+def unameExists(uname, dataSum, dataList):    # fungsi untuk mengecek apakah username sudah ada atau belum
+    for i in range(1, dataSum):
         if dataList[i][0] == uname:
             return True
     return False
 
-def jinAccount(dataList, sum):   # fungsi yang menghandle pembuatan akun
+def jinAccount(dataSum, dataList):   # fungsi yang menghandle pembuatan akun
     uname = input('Masukkan username jin: ')
-    while unameExists(uname, sum, dataList):
+    while unameExists(uname, dataSum, dataList):
         print()
         print(f'Username “{uname}” sudah diambil!')
         print()
@@ -36,8 +35,8 @@ def jinAccount(dataList, sum):   # fungsi yang menghandle pembuatan akun
 
     return uname, password
 
-def summonJin(sum, dataList, data):
-    if sum == 103:
+def summonJin(dataSum, dataList):
+    if dataSum == 103:
         print('Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu')
     else:
         print("Jenis jin yang dapat dipanggil:")
@@ -58,17 +57,15 @@ def summonJin(sum, dataList, data):
         if jinType == 1:
             print('Memilih jin “Pengumpul”.')
             print()
-            uname, password = jinAccount(dataList, sum)
-            newDataList = updateDataList3(uname, password, 'jin_pengumpul', dataList, data)
-            newDataStr = updateData3(uname, password, 'jin_pengumpul', data)
+            uname, password = jinAccount(dataSum, dataList)
+            newDataList = updateDataList3(uname, password, 'jin_pengumpul', dataSum, dataList)
 
-            return newDataList, newDataStr
+            return newDataList
 
         elif jinType == 2:
             print('Memilih jin “Pembangun”.')
             print()
-            uname, password = jinAccount(dataList, sum)
-            newDataList = updateDataList3(uname, password, 'jin_pembangun', dataList, data)
-            newDataStr = updateData3(uname, password, 'jin_pembangun', data)
+            uname, password = jinAccount(dataSum, dataList)
+            newDataList = updateDataList3(uname, password, 'jin_pembangun', dataSum, dataList)
 
-            return newDataList, newDataStr
+            return newDataList
