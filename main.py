@@ -1,5 +1,6 @@
 from module import *
 from F03 import *
+from F05 import *
 
 file = open('user.csv', 'r')
 userData = file.read()
@@ -17,9 +18,18 @@ bahanDataList = makeList(bahanData)
 bahanDataSum = rowCount(bahanData)
 
 # belum final belum dibenerin
-while True:
+
+playing = True
+
+while playing:
     userInput = input('>>> ')
 
     if userInput == 'summonjin':
-        userDataList, userData = summonJin()
+        userDataList, userData = summonJin(userDataSum, userDataList, userData)
         userDataSum += 1
+    
+    elif userInput == 'ubahjin':
+        ubahJin(userDataSum, userDataList)
+    
+    elif userInput == 'q':  # blm selesai
+        playing = False
