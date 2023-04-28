@@ -30,15 +30,18 @@ while playing:
     if userInput == 'summonjin':    #F03
         userDataList = summonJin(userDataSum, userDataList)
         userDataSum += 1
+        print(userDataList)
     
     elif userInput == 'hapusjin':   #F04
         userDataSum, userDataList, candiDataSum, candiDataList = hapusJin(userDataSum, userDataList, candiDataSum, candiDataList)
     
     elif userInput == 'ubahjin':    #F05
-        ubahJin(userDataSum, userDataList)
+        userDataList = ubahJin(userDataSum, userDataList)
+        print(userDataList)
     
-    elif userInput == 'banguncandi': #F06
+    elif userInput == 'banguncandi':    #F06
         bahanDataSum = bangun_candi (bahanDataList, bahanDataSum)
+    
     elif userInput == 'exit':   #F16
         if exit():
             print('masuk ke f14')
