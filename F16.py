@@ -1,8 +1,8 @@
 def exit():
-    userInput = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n) ")
+    userInput = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (Y/N) ")
 
-    while userInput != 'y' and userInput != 'n':
-        userInput = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n) ")
+    while userInput != 'Y' and userInput != 'N':
+        userInput = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (Y/N) ")
 
-    if userInput == "y":
+    if userInput == "Y":
         return True

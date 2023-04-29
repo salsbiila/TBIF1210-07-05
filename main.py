@@ -32,12 +32,14 @@ while playing:
     if userInput == 'summonjin':    #F03
         userDataList = summonJin(userDataSum, userDataList)
         userDataSum += 1
+        print(userDataList)
     
     elif userInput == 'hapusjin':   #F04
         userDataSum, userDataList, candiDataSum, candiDataList = hapusJin(userDataSum, userDataList, candiDataSum, candiDataList)
     
     elif userInput == 'ubahjin':    #F05
-        ubahJin(userDataSum, userDataList)
+        userDataList = ubahJin(userDataSum, userDataList)
+        print(userDataList)
     
     elif userInput == 'bangun': #F06
         candiDataList, candiDataSum = bangun_candi (bahanDataList, candiDataList, candiDataSum)

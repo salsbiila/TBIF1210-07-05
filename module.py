@@ -103,9 +103,9 @@ def deleteCandi(id, dataSum, dataList):
     newSum = dataSum - deletionCount
     return newSum, newListData
 
-def makeStr(sum, dataList, columnNum):
+def makeStr(dataSum, dataList, columnNum):
     dataStr = ''
-    for row in range(sum):
+    for row in range(dataSum):
         for idx in range(columnNum):
             if idx != columnNum-1:
                 dataStr += f'{dataList[row][idx]};'
@@ -113,6 +113,21 @@ def makeStr(sum, dataList, columnNum):
                 dataStr += f'{dataList[row][idx]}\n'
     
     return dataStr
+
+def switchRole(row, dataSum, dataList):
+    newDataList = [['', '', ''] for i in range (dataSum)]
+
+    for i in range(dataSum):
+        for j in range(3):
+            if i == row and j == 2:
+                if dataList[i][j] == 'jin_pengumpul':
+                    newDataList[i][j] = 'jin_pembangun'
+                elif dataList[i][j] == 'jin_pembangun':
+                    newDataList[i][j] = 'jin_pengumpul'
+            else:
+                newDataList[i][j] = dataList[i][j]
+    
+    return newDataList
 
 def maxmin(l):
     max = int(l[0])
