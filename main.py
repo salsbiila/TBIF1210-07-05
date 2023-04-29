@@ -3,6 +3,8 @@ from F03 import *
 from F04 import *
 from F05 import *
 from F06_jin_pembangun import *
+from F07_Jin_pengumpul import *
+from F08_KumpulBangun import *
 from F16 import *
 
 file = open('user.csv', 'r')
@@ -37,8 +39,24 @@ while playing:
     elif userInput == 'ubahjin':    #F05
         ubahJin(userDataSum, userDataList)
     
-    elif userInput == 'banguncandi': #F06
-        bahanDataSum = bangun_candi (bahanDataList, bahanDataSum)
+    elif userInput == 'bangun': #F06
+        candiDataList, candiDataSum = bangun_candi (bahanDataList, candiDataList, candiDataSum)
+        print(bahanDataList)
+        print(candiDataList, candiDataSum)
+
+    elif userInput == 'kumpul': #F07
+        kumpul_candi (bahanDataList)
+        print(bahanDataList)
+
+    elif userInput == 'batchkumpul': #F08
+        kumpul (bahanDataList, userDataList, userDataSum)
+        print(bahanDataList)
+
+    elif userInput == 'batchbangun': #F08
+        candiDataList, candiDataSum = bangun (bahanDataList, candiDataList, candiDataSum, userDataList, userDataSum)
+        print(bahanDataList)
+        print(candiDataList, candiDataSum)
+
     elif userInput == 'exit':   #F16
         if exit():
             print('masuk ke f14')

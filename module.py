@@ -3,6 +3,7 @@ def rowCount(file): # hanya untuk di awal
     for letter in file:
         if letter == '\n':
             count += 1
+
     return count
 
 def makeList(file, delim = ';'): # hanya untuk membuat list pertama
@@ -11,11 +12,14 @@ def makeList(file, delim = ';'): # hanya untuk membuat list pertama
         if letter == delim:
             delimCount += 1
     
-    delimCount //= rowCount(file)
+    delimCount //= rowCount(file)-1
+    listData = []
+
     if delimCount == 2:
         listData = [['', '', ''] for i in range (rowCount(file))]
     elif delimCount == 4:
         listData = [['', '', '', '', ''] for i in range (rowCount(file))]
+
     row = 0
     idx = 0 # kolom
     data = ''
@@ -34,8 +38,9 @@ def makeList(file, delim = ';'): # hanya untuk membuat list pertama
             data += letter
             listData[row][idx] = data
         else:
-            data += letter
+            data += letter     
         currentLength += 1
+    print(listData)
     return listData
 
 def updateDataList3(param1, param2, param3, dataSum, dataList):
@@ -50,15 +55,15 @@ def updateDataList3(param1, param2, param3, dataSum, dataList):
     return newListData
 
 def updateDataList5(param1, param2, param3, param4, param5, dataSum, dataList):
-    newListData = [['', '', ''] for i in range (dataSum+1)]
+    newListData = [['', '', '', '', ''] for i in range (dataSum+1)]
     for row in range(dataSum):
         for idx in range(5):    #idx adalah kolom
             newListData[row][idx] = dataList[row][idx]
-    newListData[dataSum][0] = param1
-    newListData[dataSum][1] = param2
-    newListData[dataSum][2] = param3
-    newListData[dataSum][3] = param4
-    newListData[dataSum][4] = param5
+    newListData[dataSum-1][0] = param1
+    newListData[dataSum-1][1] = param2
+    newListData[dataSum-1][2] = param3
+    newListData[dataSum-1][3] = param4
+    newListData[dataSum-1][4] = param5
 
     return newListData
 
