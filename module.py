@@ -85,10 +85,10 @@ def deleteUser(uname, dataSum, dataList):
     newSum = dataSum - deletionCount
     return newSum, newListData
 
-def deleteCandi(id, dataSum, dataList):
+def deleteCandi(uname, dataSum, dataList):
     deletionCount = 0
     for i in range(1, dataSum):
-        if dataList[i][0] == id:
+        if dataList[i][1] == uname:
             dataList[i] = None
             deletionCount += 1
     
