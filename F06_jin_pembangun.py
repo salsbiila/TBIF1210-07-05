@@ -1,7 +1,14 @@
 import random 
 from module import*
 
-def bangun_candi(bahan, candi, jumlah_candi):
+def ubah_candi(pasir, batu, air, list_candi, sumcandi, nama):
+    if sumcandi == 1:
+        id = 1
+    else:
+        id = sumcandi-1
+    return updateDataList5 (id, nama , pasir, batu, air, list_candi,sumcandi) 
+
+def bangun_candi(bahan, candi, jumlah_candi,nama):
 
     pasir = random.randint (1,5)
     batu = random.randint (1,5)
@@ -19,13 +26,11 @@ def bangun_candi(bahan, candi, jumlah_candi):
         bahan [3][2] -= air
 
         # append candi baru ke list candi
-        candi = ubah_candi(pasir, batu, air, jumlah_candi, candi)
+        
+        candi = ubah_candi(pasir, batu, air, candi, jumlah_candi, nama)
         jumlah_candi += 1
         print(f"Sisa candi yang perlu dibangun: {100 - jumlah_candi+2}.")
         print(candi)
         return candi, jumlah_candi
 
 
-def ubah_candi(pasir, batu, air, x, y):
-    id = 1 # tolong bikin id lagi. Karena harus berubah2 sama nama user saat ini
-    return updateDataList5 (id, "ucok", pasir, batu, air, x,y) #cari cara update nya

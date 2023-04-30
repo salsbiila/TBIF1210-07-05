@@ -1,4 +1,5 @@
 from module import *
+from F01_LOGIN import *
 from F03 import *
 from F04 import *
 from F05 import *
@@ -23,13 +24,17 @@ bahanDataList = makeList(bahanData)
 bahanDataSum = rowCount(bahanData)
 
 # belum final belum dibenerin
-
+role = ''
+namajin= '' 
 playing = True
 
 while playing:
     userInput = input('>>> ')
 
-    if userInput == 'summonjin':    #F03
+    if userInput == 'login':    #F01
+        role, namajin = login (userDataList, userDataSum,role, namajin)
+    
+    elif userInput == 'summonjin':    #F03
         userDataList = summonJin(userDataSum, userDataList)
         userDataSum += 1
         print(userDataList)
@@ -42,7 +47,7 @@ while playing:
         print(userDataList)
     
     elif userInput == 'bangun': #F06
-        candiDataList, candiDataSum = bangun_candi (bahanDataList, candiDataList, candiDataSum)
+        candiDataList, candiDataSum = bangun_candi (bahanDataList, candiDataList, candiDataSum, namajin)
         print(bahanDataList)
         print(candiDataList, candiDataSum)
 

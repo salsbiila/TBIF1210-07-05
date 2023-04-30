@@ -91,7 +91,7 @@ def bangun(bahan, candi, jumlah_candi, user, jumlah_user):
                 print(candi)
             return candi, jumlah_candi
         else:
-            print("bahan g cukup")
+            print("bahan tidak cukup, kumpulkan lagi bahan")
             return candi, jumlah_candi
     else:
         print('Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.')
