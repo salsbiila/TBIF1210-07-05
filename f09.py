@@ -1,59 +1,50 @@
-from module import Bacafile, maxmin, pisah, leng, ubah, pan
-from f10 import jumlahcandi
+from module import *
 
-Urutanleksikal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-j = Bacafile("candi.csv")
-c = Bacafile("bahan_bangunan.csv")
-d = Bacafile("user.csv")
-jumlahJin = -1
-jinPembangun = 0
-count = 0
+def laporanjin(datalistcandi, datalistbahan, datasumcandi, datalistuser, datasumuser, urutan):
+    listjin = ["" for x in range((datasumcandi))]
 
-A = ["" for x in range(jumlahcandi())]
+    for i in range(1,datasumcandi - 1):
+        listjin[i] = datalistcandi[i][1]
 
-for line in j:
-    linedata = pisah(ubah(line, "\n", ""), ",")
-    if count > 0 :
-        A[count - 1] = linedata[1]
-    count += 1
+    for i in range(leng(listjin)):
+        max = 0
+        jinTrajin = "Z"
+        if pan(listjin,listjin[i]) > max:
+            max = pan(listjin,listjin[i])
+            if cariIdx(urutan, listjin[i][0]) <= cariIdx(urutan, jinTrajin[0]):
+                jinTrajin = listjin[i]
 
-for i in range(leng(A)):
-    max = 0
-    if pan(A,A[i]) > max:
-        print("A")
-        max = pan(A,A[i])
-        jinTrajin = A[i]
+    for i in range(leng(listjin)):
+        min = max
+        jinPmalas = "A"
+        if pan(listjin,i) < min:
+            min = pan(listjin,i)
+            if cariIdx(urutan, listjin[i][0]) >= cariIdx(urutan, jinTrajin[0]):
+                jinPmalas = listjin[i]
 
-for i in A:
-    min = max
-    if pan(A,i) < min:
-        min = pan(A,i)
-        jinPmalas = i
+    jinPembangun = 0
+    jumlahjin = datasumuser - 3
+    for i in range(1, datasumuser - 1):
+        if datalistuser[i][2] == "jin_pembangun":
+            jinPembangun += 1
+    jinPengumpul = jumlahjin - jinPembangun
 
-jinPembangun = leng(A)
-for i in A:
-    jinPembangun -= pan(A,i) - 2
+    count = 0
 
-jinPengumpul = jumlahJin - jinPembangun
-
-count = 0
-
-for line in c:
-    linedata = pisah(ubah(line, "\n", ""), ",")
-    if count == 1:
-        jumlahPasir = int(linedata[2])
-    elif count == 2:
-        jumlahAir = int(linedata[2])
-    elif count == 3:
-        jumlahBatu = int(linedata[2])
-    count += 1
- 
-jinPengumpul = jumlahJin - jinPembangun
-print(f"Total jin : {jumlahJin}")
-print(f"Total jin pengumpul : {jinPengumpul}")
-print(f"Total jin pembangun : {jinPembangun}")
-print(f"Jin terajin : {jinTrajin}")
-print(f"Jin pemalas : {jinPmalas}")
-print(f"Jumlah pasir : {jumlahPasir}")
-print(f"Jumlah air : {jumlahAir}")
-print(f"Jumlah batu : {jumlahBatu}")
+    for line in datalistbahan:
+        if count == 1:
+            jumlahPasir = int(line[2])
+        elif count == 2:
+            jumlahAir = int(line[2])
+        elif count == 3:
+            jumlahBatu = int(line[2])
+        count += 1
+    
+    print(f"Total jin : {datasumcandi - 1}")
+    print(f"Total jin pengumpul : {jinPengumpul}")
+    print(f"Total jin pembangun : {jinPembangun}")
+    print(f"Jin terajin : {jinTrajin}")
+    print(f"Jin pemalas : {jinPmalas}")
+    print(f"Jumlah pasir : {jumlahPasir}")
+    print(f"Jumlah air : {jumlahAir}")
+    print(f"Jumlah batu : {jumlahBatu}")

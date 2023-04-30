@@ -6,7 +6,9 @@ from F05 import *
 from F06_jin_pembangun import *
 from F07_Jin_pengumpul import *
 from F08_KumpulBangun import *
+from f09 import *
 from F14_SAVE import *
+from F15_help import *
 from F16 import *
 
 file = open('user.csv', 'r')
@@ -25,6 +27,7 @@ bahanDataList = makeList(bahanData)
 bahanDataSum = rowCount(bahanData)
 
 # belum final belum dibenerin
+Urutanleksikal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 role = ''
 namajin= '' 
 playing = True
@@ -64,6 +67,12 @@ while playing:
         candiDataList, candiDataSum = bangun (bahanDataList, candiDataList, candiDataSum, userDataList, userDataSum)
         print(bahanDataList)
         print(candiDataList, candiDataSum)
+    
+    elif userInput == 'laporanjin': #F09
+        laporanjin (candiDataList, bahanDataList, candiDataSum, userDataList, userDataSum, Urutanleksikal)
+    
+    elif userInput == 'help': #F15
+        help()
 
     elif userInput == 'exit':   #F16
         if exit():
