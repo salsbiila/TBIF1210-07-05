@@ -6,6 +6,7 @@ from F05 import *
 from F06_jin_pembangun import *
 from F07_Jin_pengumpul import *
 from F08_KumpulBangun import *
+from F14_SAVE import *
 from F16 import *
 
 file = open('user.csv', 'r')
@@ -66,5 +67,5 @@ while playing:
 
     elif userInput == 'exit':   #F16
         if exit():
-            print('masuk ke f14')
+            saveCandi(candiDataSum, candiDataList, userDataList, userDataSum, bahanDataList, bahanDataSum)
         playing = False
