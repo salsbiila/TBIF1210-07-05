@@ -26,10 +26,18 @@ def makeList(file, delim = ';'): # hanya untuk membuat list pertama
     currentLength = 1
     for letter in file:
         if letter == delim:
+            print('pisah')
+            print(row)
+            print(idx)
+            print()
             listData[row][idx] = data
             data = ''
             idx += 1
         elif letter == '\n':
+            print('line baru')
+            print(row)
+            print(idx)
+            print()
             listData[row][idx] = data
             data = ''
             row += 1
@@ -40,7 +48,7 @@ def makeList(file, delim = ';'): # hanya untuk membuat list pertama
         else:
             data += letter     
         currentLength += 1
-    print(listData)
+
     return listData
 
 def updateDataList3(param1, param2, param3, dataSum, dataList):
@@ -59,11 +67,11 @@ def updateDataList5(param1, param2, param3, param4, param5, dataSum, dataList):
     for row in range(dataSum):
         for idx in range(5):    #idx adalah kolom
             newListData[row][idx] = dataList[row][idx]
-    newListData[dataSum-1][0] = param1
-    newListData[dataSum-1][1] = param2
-    newListData[dataSum-1][2] = param3
-    newListData[dataSum-1][3] = param4
-    newListData[dataSum-1][4] = param5
+    newListData[dataSum][0] = param1
+    newListData[dataSum][1] = param2
+    newListData[dataSum][2] = param3
+    newListData[dataSum][3] = param4
+    newListData[dataSum][4] = param5
 
     return newListData
 
@@ -85,10 +93,10 @@ def deleteUser(uname, dataSum, dataList):
     newSum = dataSum - deletionCount
     return newSum, newListData
 
-def deleteCandi(uname, dataSum, dataList):
+def deleteCandi(id, dataSum, dataList):
     deletionCount = 0
     for i in range(1, dataSum):
-        if dataList[i][1] == uname:
+        if dataList[i][0] == id:
             dataList[i] = None
             deletionCount += 1
     
