@@ -7,6 +7,9 @@ from F06_jin_pembangun import *
 from F07_Jin_pengumpul import *
 from F08_KumpulBangun import *
 from f09 import *
+from f10 import *
+from f11 import *
+from f12 import *
 from F14_SAVE import *
 from F15_help import *
 from F16 import *
@@ -51,26 +54,59 @@ while playing:
         print(userDataList)
     
     elif userInput == 'bangun': #F06
-        candiDataList, candiDataSum = bangun_candi (bahanDataList, candiDataList, candiDataSum, namajin)
-        print(bahanDataList)
-        print(candiDataList, candiDataSum)
+        if role != "jin_pembangun":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            candiDataList, candiDataSum = bangun_candi (bahanDataList, candiDataList, candiDataSum, namajin)
+            print(bahanDataList)
+            print(candiDataList, candiDataSum)
 
     elif userInput == 'kumpul': #F07
-        kumpul_candi (bahanDataList)
-        print(bahanDataList)
+        if role != "jin_pengumpul":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            kumpul_candi (bahanDataList)
+            print(bahanDataList)
 
     elif userInput == 'batchkumpul': #F08
-        kumpul (bahanDataList, userDataList, userDataSum)
-        print(bahanDataList)
+        if role != "bondowoso":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            kumpul (bahanDataList, userDataList, userDataSum)
+            print(bahanDataList)
 
     elif userInput == 'batchbangun': #F08
-        candiDataList, candiDataSum = bangun (bahanDataList, candiDataList, candiDataSum, userDataList, userDataSum)
-        print(bahanDataList)
-        print(candiDataList, candiDataSum)
+        if role != "bondowoso":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            candiDataList, candiDataSum = bangun (bahanDataList, candiDataList, candiDataSum, userDataList, userDataSum)
+            print(bahanDataList)
+            print(candiDataList, candiDataSum)
     
     elif userInput == 'laporanjin': #F09
-        laporanjin (candiDataList, bahanDataList, candiDataSum, userDataList, userDataSum, Urutanleksikal)
+        if role != "bondowoso":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            laporanjin (candiDataList, bahanDataList, candiDataSum, userDataList, userDataSum, Urutanleksikal)
     
+    elif userInput == 'laporancandi': #F10
+        if role != "bondowoso":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            laporancandi (candiDataList, candiDataSum)
+
+    elif userInput == 'hancurkancandi':
+        if role != "bondowoso":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            hancurkancandi(candiDataList)
+    
+    elif userInput == 'ayamberkokok':
+        if role != "rorojonggrang":
+            print("Pemain tidak memiliki kemampuan ini")
+        else:
+            ayamberkokok(candiDataSum)
+
     elif userInput == 'help': #F15
         help()
 

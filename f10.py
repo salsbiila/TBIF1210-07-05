@@ -1,8 +1,5 @@
 from module import *
 
-global data, jumlahcandi, listharga
-
-
 def harga(pasir,batu,air):
     return pasir*1000 + batu*15000 + air*7500
 
@@ -13,7 +10,6 @@ def laporancandi(datafile, datasum):
     else:      
         max = 0
         min = harga(int(datafile[1][2]), int(datafile[1][3]), int(datafile[1][4]))
-        Listharga = pisah(ppop(listharga), ",")
 
         for i in range(1, datasum - 1):
             harga = harga(int(datafile[1][2]), int(datafile[1][3]), int(datafile[1][4]))
