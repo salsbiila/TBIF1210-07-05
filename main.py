@@ -123,7 +123,7 @@ while playing:
             if role != "bandung_bondowoso":
                 print("Pemain tidak memiliki kemampuan ini")
             else:
-                candiDataList = hancurkancandi(candiDataList)
+                candiDataList = hancurkancandi(candiDataList, candiDataSum)
         
         elif userInput == 'ayamberkokok':
             if role != "rorojonggrang":

@@ -5,7 +5,6 @@ def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalis
 
     for i in range(1,datasumcandi-1):
         listjin[i - 1] = datalistcandi[i][1]
-    print(listjin)
     jinTrajin = "Z"
     jinPmalas = "A"
 
