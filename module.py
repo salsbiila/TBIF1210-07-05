@@ -100,17 +100,17 @@ def makeStr(dataSum, dataList, columnNum, addEnter = True):
         for idx in range(columnNum):
             if row != dataSum - 1:
                 if idx != columnNum-1:
-                    dataStr += f'{dataList[row][idx]};'
+                    dataStr += (str(dataList[row][idx]) + ';')
                 else:
-                    dataStr += f'{dataList[row][idx]}\n'
+                    dataStr += (str(dataList[row][idx]) + '\n')
             else:
                 if idx != columnNum-1:
-                    dataStr += f'{dataList[row][idx]};'
+                    dataStr += (str(dataList[row][idx]) + ';')
                 else:
                     if addEnter:
-                        dataStr += f'{dataList[row][idx]}\n'
+                        dataStr += (str(dataList[row][idx]) + '\n')
                     else:
-                        dataStr += f'{dataList[row][idx]}'
+                        dataStr += (str(dataList[row][idx]))
 
     
     return dataStr
