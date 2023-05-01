@@ -3,12 +3,7 @@
 # F.S. Keluaran serangkaian menu yang bisa dipilih
 # Membuat daftar command untuk tiap role 
 # Pemain yang belum login
-def help():
-    print("===============================")
-    print("   Selamat datang di helpdesk   ")
-    print("===============================")
-    akses = input("Masukkan role: ")
-    print("===============================")
+def help(akses):
 
     if akses == "guest":
         print("=========== HELP ===========")
@@ -17,7 +12,7 @@ def help():
         print("2. exit")
         print("   Untuk keluar dari program dan kembali ke terminal")
 
-    elif akses == "Bandung Bondowoso" or akses == "bandung bondowoso":
+    elif akses == "bandung_bondowoso":
         print("=========== HELP ===========")
         print("1. logout")
         print("   Untuk keluar dari akun yang digunakan sekarang")
@@ -36,7 +31,7 @@ def help():
         print("8. laporancandi")
         print("   Untuk menampilkan laporan mengenai candi yang telah dibangun")
 
-    elif akses == "Roro Jonggrang" or akses == "roro jongrang":
+    elif akses == "roro_jongrang":
         print("=========== HELP ===========")
         print("1. logout")
         print("   Untuk keluar dari akun yang digunakan sekarang")
@@ -45,14 +40,14 @@ def help():
         print("3. Ayam berkokok")
         print("   Untuk menyelesaikan permainan dengan memalsukan pagi hari")
 
-    elif akses == "Jin Pengumpul" or akses == "jin pengumpul":
+    elif akses == "jin_pengumpul":
         print("=========== HELP ===========")
         print("1. logout")
         print("   Untuk keluar dari akun yang digunakan sekarang")
         print("2. kumpul")
         print("   Untuk mengumpulkan resource candi")
 
-    elif akses == "Jin Pembangun" or akses == "jin pembangun":
+    elif akses == "jin_pembangun":
         print("=========== HELP ===========")
         print("1. logout")
         print("   Untuk keluar dari akun yang digunakan sekarang")

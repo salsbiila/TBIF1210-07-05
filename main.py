@@ -53,10 +53,11 @@ while playing:
             logout(isLoggedIn)
         
         elif userInput == 'save':
-            saveCandi(candiDataSum, candiDataList, userDataList, userDataSum, bahanDataList, bahanDataSum)
+            if True:
+                saveCandi(candiDataSum, candiDataList, userDataList, userDataSum, bahanDataList, bahanDataSum)
     
         elif userInput == 'help': #F15
-            help()
+            help('guest')
 
         elif userInput == 'exit':   #F16
             if exit():
@@ -136,10 +137,11 @@ while playing:
                 playing = False
 
         elif userInput == 'save':
-            saveCandi(candiDataSum, candiDataList, userDataList, userDataSum, bahanDataList, bahanDataSum)
+            if True:
+                saveCandi(candiDataSum, candiDataList, userDataList, userDataSum, bahanDataList, bahanDataSum)
 
         elif userInput == 'help': #F15
-            help()
+            help(role)
 
         elif userInput == 'exit':   #F16
             if exit():
