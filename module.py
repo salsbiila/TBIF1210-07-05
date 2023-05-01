@@ -133,21 +133,24 @@ def switchRole(row, dataSum, dataList):
 def maxmin(l):
     max = int(l[0])
     min = int(l[0])
-    for i in l:
-        if int(i) > max:
-            max = int(i)
-        if int(i) < min:
-            min = int(i)
+    for i in range(leng(l)):
+        if int(l[i]) > max:
+            max = int(l[i])
+        if int(l[i]) < min:
+            min = int(l[i])
     return (max,min)
-
-def Bacafile(filename):
-    f = open(filename,"r")
-    return f
 
 def leng(l):
     c = 0
-    for i in l:
+    X = 0
+    for i in range(100):
+        X += 1
+        temp = [None for i in range (X)]
+        for k in range (X):
+            temp[k] = l[k]
         c += 1
+        if temp == l:
+            break
     return c
 
 def uang(l):
@@ -173,9 +176,3 @@ def cariIdx(l,x):
         if l[i] == x:
             index = i
     return index
-
-def ppop(l):
-    s = ""
-    for i in range(leng(l) - 1):
-        s += l[i]
-    return s

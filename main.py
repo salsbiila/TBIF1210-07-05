@@ -11,21 +11,25 @@ from f09 import *
 from f10 import *
 from f11 import *
 from f12 import *
+from F13_Load import *
 from F14_SAVE import *
 from F15_help import *
 from F16 import *
 
-file = open('user.csv', 'r')
+folder = ""
+Folder = Load(folder)
+
+file = open(Folder + "/" + 'user.csv', 'r')
 userData = file.read()
 userDataList = makeList(userData, 3)
 userDataSum = rowCount(userData)
 
-file = open('candi.csv', 'r')
+file = open(Folder + "/" + 'candi.csv', 'r')
 candiData = file.read()
 candiDataList = makeList(candiData, 5)
 candiDataSum = rowCount(candiData)
 
-file = open('bahan_bangunan.csv', 'r')
+file = open(Folder + "/" + 'bahan_bangunan.csv', 'r')
 bahanData = file.read()
 bahanDataList = makeList(bahanData, 3)
 bahanDataSum = rowCount(bahanData)

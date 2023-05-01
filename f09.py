@@ -5,7 +5,6 @@ def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalis
 
     for i in range(1,datasumcandi - 1):
         listjin[i] = datalistcandi[i][1]
-    print(listjin)
 
     if datasumcandi == 2:
         jinTrajin = "-"
@@ -50,11 +49,11 @@ def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalis
                 jumlahBatu = int(line[2])
             count += 1
     
-    print(f"Total jin : {jumlahjin}")
-    print(f"Total jin pengumpul : {jinPengumpul}")
-    print(f"Total jin pembangun : {jinPembangun}")
-    print(f"Jin terajin : {jinTrajin}")
-    print(f"Jin pemalas : {jinPmalas}")
-    print(f"Jumlah pasir : {jumlahPasir}")
-    print(f"Jumlah air : {jumlahAir}")
-    print(f"Jumlah batu : {jumlahBatu}")
+    print("Total jin : ",jumlahjin)
+    print("Total jin pengumpul : ",jinPengumpul)
+    print("Total jin pembangun : ",jinPembangun)
+    print("Jin terajin : ", jinTrajin)
+    print("Jin pemalas : ", jinPmalas)
+    print("Jumlah pasir : ", jumlahPasir)
+    print("Jumlah air : ", jumlahAir)
+    print("Jumlah batu : ", jumlahBatu)

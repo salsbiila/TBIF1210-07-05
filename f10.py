@@ -13,7 +13,7 @@ def laporancandi(datafile, datasum):
         idmin = "-"
         maxharga = 0
         minharga = 0
-    else:      
+    else:
         max = 0
         min = Harga(datafile[1][2], datafile[1][3], datafile[1][4])
 
@@ -28,4 +28,4 @@ def laporancandi(datafile, datasum):
             toPas += datafile[i][2]
             toBat += datafile[i][3]
             toAir += datafile[i][4]
-    print(f"Total Candi: {datasum - 1}\nTotal Pasir yang digunakan: {toPas}\nTotal Batu yang digunakan: {toBat}\nTotal Air yang digunakan: {toAir}\nID Candi Termahal: {idmax} (Rp {uang(str(maxharga))})\nID Candi Termurah: {idmin} (Rp {uang(str(minharga))})")
+    print("Total Candi:", (datasum - 1),"\nTotal Pasir yang digunakan: ",(toPas),"\nTotal Batu yang digunakan: ",(toBat),"\nTotal Air yang digunakan: ",(toAir),"\nID Candi Termahal: ",(idmax)," (Rp ",(uang(str(maxharga))),"\nID Candi Termurah: ",(idmin)," (Rp ",(uang(str(minharga))))
