@@ -17,11 +17,10 @@ def laporancandi(datafile, datasum):
         maxharga = 0
         minharga = Harga(int(datafile[1][2]), int(datafile[1][3]), int(datafile[1][4]))
         idmin = int(datafile[1][0])
-        print(min)
 
         for i in range(1, datasum - 1):
             harga = Harga(int(datafile[i][2]), int(datafile[i][3]), int(datafile[i][4]))
-            print(harga)
+
             if harga > maxharga:
                 maxharga = harga
                 idmax = int(datafile[i][0])
