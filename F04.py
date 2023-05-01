@@ -20,4 +20,4 @@ def hapusJin(userDataSum, userDataList, candiDataSum, candiDataList, role):
             print('Tidak ada jin dengan username tersebut.')
     
     else:
-        print(print('Maaf, anda tidak memiliki kemampuan untuk menghapus jin (ㆀ˘･з･˘)'))
+        print("Pemain tidak memiliki kemampuan ini")

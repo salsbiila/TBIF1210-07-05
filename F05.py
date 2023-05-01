@@ -36,4 +36,4 @@ def ubahJin(dataSum, dataList, role):
             return dataList
     
     else:
-        print(print('Maaf, anda tidak memiliki kemampuan untuk mengubah jin (ㆀ˘･з･˘)'))
+        print("Pemain tidak memiliki kemampuan ini")

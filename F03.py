@@ -72,4 +72,4 @@ def summonJin(dataSum, dataList, role):
                 return newDataList
     
     else:
-        print('Maaf, anda tidak memiliki kemampuan untuk memanggil jin (ㆀ˘･з･˘)')
+        print("Pemain tidak memiliki kemampuan ini")
