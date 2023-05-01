@@ -11,7 +11,7 @@ def jinAccount(dataSum, dataList):   # fungsi yang menghandle pembuatan akun
     uname = input('Masukkan username jin: ')
     while unameExists(uname, dataSum, dataList):
         print()
-        print(f'Username “{uname}” sudah diambil!')
+        print('Username “', uname, '” sudah diambil!')
         print()
         uname = input('Masukkan username jin: ')
     
@@ -31,7 +31,7 @@ def jinAccount(dataSum, dataList):   # fungsi yang menghandle pembuatan akun
     time.sleep(1)
 
     print()
-    print(f'Jin {uname} berhasil dipanggil!')
+    print('Jin ', uname, ' berhasil dipanggil!')
 
     return uname, password
 
@@ -49,7 +49,7 @@ def summonJin(dataSum, dataList, role):
             print()
 
             while jinType != 1 and jinType != 2:
-                print(f'Tidak ada jenis jin bernomor “{jinType}”!')
+                print('Tidak ada jenis jin bernomor “', jinType, '”!')
                 print()
 
                 jinType = int(input('Masukkan nomor jenis jin yang ingin dipanggil: '))
