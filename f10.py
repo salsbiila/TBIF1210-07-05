@@ -27,7 +27,7 @@ def laporancandi(datafile, datasum):
             if harga < minharga:
                 minharga = harga
                 idmin = int(datafile[i][0])
-                print(idmin)
+                
             toPas += int(datafile[i][2])
             toBat += int(datafile[i][3])
             toAir += int(datafile[i][4])
