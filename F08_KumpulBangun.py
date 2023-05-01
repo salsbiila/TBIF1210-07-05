@@ -22,6 +22,10 @@ def kumpul(bahan, bahanDataSum, user, jumlah_user):
         bahan = [['nama', 'deskripsi', 'jumlah'], ['pasir', 'deskripsi', 0], ['batu', 'deskripsi', 0], ['air', 'deskripsi', 0]]
 
     # tambahin ke bahan
+    bahan[1][2] = int()
+    bahan[2][2] = int()
+    bahan[3][2] = int()
+
     bahan [1][2] += hasil_kumpul[0]
     bahan [2][2] += hasil_kumpul[1]
     bahan [3][2] += hasil_kumpul[2]
@@ -34,6 +38,12 @@ def kumpul(bahan, bahanDataSum, user, jumlah_user):
     
     return bahan
 
+def saveCandiF8(username, pasir, batu, air, sumcandi, list_candi):
+    if sumcandi == 2:
+        id = 1
+    else:
+        id = int(list_candi[sumcandi - 2][0]) + 1
+    return updateDataList5 (id, username, pasir, batu, air, sumcandi, list_candi)
 
 def bangun(bahan, candi, jumlah_candi, user, jumlah_user):
     jumlah_jin_pembangun = 0
@@ -80,34 +90,15 @@ def bangun(bahan, candi, jumlah_candi, user, jumlah_user):
             bahan [3][2] -= hasil_bangun[2]
 
                 # simpan candi
-            candi = 0
+            jumlahcandi = 0
             for i in range(jumlah_jin_pembangun):
-                candi = saveCandi(username[i], hasil_candi[i][0], hasil_candi[i][1], hasil_candi[i][2], jumlah_candi, candi)
+                candi = saveCandiF8(username[i], hasil_candi[i][0], hasil_candi[i][1], hasil_candi[i][2], jumlah_candi, candi)
                 jumlah_candi += 1
-                candi += 1
-            print("Jin berhasil membangun ", candi, " buah candi.")
+                jumlahcandi += 1
+            print("Jin berhasil membangun ", jumlahcandi, " buah candi.")
             return candi, jumlah_candi
         else:
             print("bahan tidak cukup, kumpulkan lagi bahan")
     else:
         print('Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.')
     return candi, jumlah_candi
-
-def saveCandi(username, pasir, batu, air, sumcandi, list_candi):
-    if sumcandi == 2:
-        id = 1
-    else:
-        id = list_candi[sumcandi - 2][0] + 1
-    return updateDataList5 (id, username, pasir, batu, air, sumcandi, list_candi)
-
-
-
-
-
-
-
-
-
-
-
-
