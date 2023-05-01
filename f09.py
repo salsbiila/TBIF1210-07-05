@@ -17,10 +17,8 @@ def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalis
             max = 0
             if pan(listjin,listjin[i]) > max:
                 max = pan(listjin,listjin[i])
-                print(jinTrajin)
                 if lowercase(listjin[i]) < lowercase(jinTrajin):
                     jinTrajin = listjin[i]
-                print(jinTrajin)
         for i in range(leng(listjin)):
             min = max
             if pan(listjin,i) < min:
