@@ -73,3 +73,5 @@ def summonJin(dataSum, dataList, role):
     
     else:
         print("Pemain tidak memiliki kemampuan ini")
+
+        return dataList

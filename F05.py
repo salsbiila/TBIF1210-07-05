@@ -37,3 +37,5 @@ def ubahJin(dataSum, dataList, role):
     
     else:
         print("Pemain tidak memiliki kemampuan ini")
+
+        return dataList

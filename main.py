@@ -135,6 +135,7 @@ while playing:
                 print("Pemain tidak memiliki kemampuan ini")
             else:
                 ayamberkokok(candiDataSum)
+                playing = False
             
         elif userInput == 'help': #F15
             help()

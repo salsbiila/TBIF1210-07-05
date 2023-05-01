@@ -6,7 +6,6 @@ def Load(folder):
     parser.add_argument('nama_folder', type=str, nargs = '?', help='Input nama folder yang akan di Load')
     args = parser.parse_args()
     folder = args.nama_folder
-    print(folder)
 
     if folder == None:
         print("Tidak ada nama folder!\nContoh penulisan yang benar: python main.py <nama_folder>")
