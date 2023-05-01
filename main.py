@@ -51,6 +51,9 @@ while playing:
 
         elif userInput == 'logout':
             logout(isLoggedIn)
+        
+        elif userInput == 'save':
+            saveCandi(candiDataSum, candiDataList, userDataList, userDataSum, bahanDataList, bahanDataSum)
     
         elif userInput == 'help': #F15
             help()
@@ -126,12 +129,15 @@ while playing:
                 candiDataList = hancurkancandi(candiDataList, candiDataSum)
         
         elif userInput == 'ayamberkokok':
-            if role != "rorojonggrang":
+            if role != "roro_jonggrang":
                 print("Pemain tidak memiliki kemampuan ini")
             else:
                 ayamberkokok(candiDataSum)
                 playing = False
-            
+
+        elif userInput == 'save':
+            saveCandi(candiDataSum, candiDataList, userDataList, userDataSum, bahanDataList, bahanDataSum)
+
         elif userInput == 'help': #F15
             help()
 
