@@ -151,6 +151,12 @@ def Bacafile(filename):
     f = open(filename,"r")
     return f
 
+def leng(l):
+    c = 0
+    for i in l:
+        c += 1
+    return c
+
 def uang(l):
     c = leng(l) - 1
     hasil = ""
@@ -162,60 +168,18 @@ def uang(l):
         c -= 1
     return hasil
 
-def leng(l):
-    c = 0
-    for i in l:
-        c += 1
-    return c
-
-def ubah(l,x,y):
-    k = ""
-    for i in range(leng(l)):
-        if l[i] != x:
-            k += l[i]
-        else:
-            k += y
-    return k
-
 def pan(l,x):
     c = 1
-    for i in l:
-        if i == x:
+    for i in range(leng(l)):
+        if l[i] == x:
             c += 1
     return c
 
-def pisah(a,x):
-    b = leng(a)
-    d = pan(a,x)
-    s = ["" for x in range(d)]
-    c = 0
-    k = 0
-    while k < b :
-        while a[k] != x and k < b - 1:
-            s[c] += a[k]
-            k += 1
-        if k == b - 1:
-            s[c] += a[k]
-        k += 1
-        c += 1
-    return(s)
-
-def bersih(l):
-    k = ""
-    i = 0
-    while i < leng(l):
-        if pan(l,l[i]) - 1 > 0:
-            k += l[i]
-            l = ubah(l,l[i],"")
-        else:
-            k += l[i]
-            i += 1
-    return k
-
-def hapus(l,x):
-    k = [0 for x in range(pan(l,x) - 1)]
-    for i in range(leng(l)):
-        True
+def cariIdx(l,x):
+    for i in range(len(l)):
+        if l[i] == x:
+            index = i
+    return index
 
 def ppop(l):
     s = ""

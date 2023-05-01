@@ -1,11 +1,7 @@
 from module import Bacafile
 
-def ayamberkokok():
-    f = Bacafile("candi.csv")
-    jumlah = 0
-
-    for line in f:
-        jumlah += 1
+def ayamberkokok(datasum):
+    jumlah = datasum - 1
 
     if jumlah < 100:
         print("Kukuruyuuk")
