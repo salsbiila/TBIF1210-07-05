@@ -2,9 +2,7 @@ user = [["","",""] for i in range (102)]
 user[0]=['Bondowoso', 'cintaroro', 'bandung_bondowoso']
 user[1]=['Roro', 'gasukabondo', 'roro_jonggrang']
 
-is_login = False
-def login (user, sumlist, role, namajin):
-    global is_login
+def login (user, sumlist, role, namajin, is_login):
     if not is_login:
         username = input ("Username : ")
         password = input ("Password : ")
@@ -27,4 +25,4 @@ def login (user, sumlist, role, namajin):
     else :
         print ("Login gagal !")
         print ("Anda telah login dengan username" + username + ', , silakan lakukan "logout" sebelum melakukan login kembali.')
-    return role,namajin
+    return role,namajin, is_login

@@ -1,1 +1,1 @@
-elif
+exit()

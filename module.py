@@ -6,20 +6,11 @@ def rowCount(file): # hanya untuk di awal
 
     return count
 
-def makeList(file, delim = ';'): # hanya untuk membuat list pertama
-    delimCount = 0
-    for letter in file:
-        if letter == delim:
-            delimCount += 1
-    
-    delimCount //= rowCount(file)-1
-    listData = []
-
-    if delimCount == 2:
+def makeList(file, x, delim = ';'): # hanya untuk membuat list pertama
+    if x == 3:
         listData = [['', '', ''] for i in range (rowCount(file))]
-    elif delimCount == 4:
+    elif x == 5:
         listData = [['', '', '', '', ''] for i in range (rowCount(file))]
-
     row = 0
     idx = 0 # kolom
     data = ''
@@ -59,11 +50,11 @@ def updateDataList5(param1, param2, param3, param4, param5, dataSum, dataList):
     for row in range(dataSum):
         for idx in range(5):    #idx adalah kolom
             newListData[row][idx] = dataList[row][idx]
-    newListData[dataSum][0] = param1
-    newListData[dataSum][1] = param2
-    newListData[dataSum][2] = param3
-    newListData[dataSum][3] = param4
-    newListData[dataSum][4] = param5
+    newListData[dataSum-1][0] = param1
+    newListData[dataSum-1][1] = param2
+    newListData[dataSum-1][2] = param3
+    newListData[dataSum-1][3] = param4
+    newListData[dataSum-1][4] = param5
 
     return newListData
 
@@ -85,10 +76,10 @@ def deleteUser(uname, dataSum, dataList):
     newSum = dataSum - deletionCount
     return newSum, newListData
 
-def deleteCandi(id, dataSum, dataList):
+def deleteCandi(uname, dataSum, dataList):
     deletionCount = 0
     for i in range(1, dataSum):
-        if dataList[i][0] == id:
+        if dataList[i][0] == uname:
             dataList[i] = None
             deletionCount += 1
     
@@ -103,14 +94,24 @@ def deleteCandi(id, dataSum, dataList):
     newSum = dataSum - deletionCount
     return newSum, newListData
 
-def makeStr(dataSum, dataList, columnNum):
+def makeStr(dataSum, dataList, columnNum, addEnter = True):
     dataStr = ''
     for row in range(dataSum):
         for idx in range(columnNum):
-            if idx != columnNum-1:
-                dataStr += f'{dataList[row][idx]};'
+            if row != dataSum - 1:
+                if idx != columnNum-1:
+                    dataStr += f'{dataList[row][idx]};'
+                else:
+                    dataStr += f'{dataList[row][idx]}\n'
             else:
-                dataStr += f'{dataList[row][idx]}\n'
+                if idx != columnNum-1:
+                    dataStr += f'{dataList[row][idx]};'
+                else:
+                    if addEnter:
+                        dataStr += f'{dataList[row][idx]}\n'
+                    else:
+                        dataStr += f'{dataList[row][idx]}'
+
     
     return dataStr
 
@@ -168,7 +169,7 @@ def pan(l,x):
     return c
 
 def cariIdx(l,x):
-    for i in range(len(l)):
+    for i in range(leng(l)):
         if l[i] == x:
             index = i
     return index

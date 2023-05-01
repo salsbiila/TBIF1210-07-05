@@ -1,18 +1,24 @@
 from module import *
 
-def harga(pasir,batu,air):
+def Harga(pasir,batu,air):
     return pasir*1000 + batu*15000 + air*7500
 
 def laporancandi(datafile, datasum):
-    toPas, toBat, toAir = 0
-    if datasum == 1:
-        idmax, idmin = "-"
+    toPas = 0
+    toBat = 0
+    toAir = 0
+    harga = 0
+    if datasum == 2:
+        idmax = '-'
+        idmin = "-"
+        maxharga = 0
+        minharga = 0
     else:      
         max = 0
-        min = harga(int(datafile[1][2]), int(datafile[1][3]), int(datafile[1][4]))
+        min = Harga(datafile[1][2], datafile[1][3], datafile[1][4])
 
         for i in range(1, datasum - 1):
-            harga = harga(int(datafile[1][2]), int(datafile[1][3]), int(datafile[1][4]))
+            harga = Harga(datafile[1][2], datafile[1][3], datafile[1][4])
             if harga > max:
                 maxharga = harga
                 idmax = datafile[i][0]

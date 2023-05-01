@@ -1,4 +1,5 @@
 import os
+from module import *
 #importing os module
 
 def saveCandi (candiNeff, candiList, userList, userNeff, bahanList, lenBahanList):
@@ -12,23 +13,28 @@ def saveCandi (candiNeff, candiList, userList, userNeff, bahanList, lenBahanList
     else:
         os.chdir (namaFolder)
     candiFile = open ("candi.csv", 'w') #digunakan untuk membuka file candi
-    candiFile.write ("id;pembuat;pasir;batu;air\n") #menulis file 
+    candiNeff, candiList = deleteCandi('', candiNeff, candiList)
+    candiFile.write(makeStr(candiNeff, candiList, 5))
+    """candiFile.write ("id;pembuat;pasir;batu;air\n") #menulis file 
     for i in range (candiNeff):
         if candiList [i] != ("", "", "", "", ""):
             string = str (candiList[i][0] + ";" + candiList[i][1]+ ";" + str (candiList [1][2]) + ";" + str (candiList[1][3]) + ";" + str (candiList[1][4]))
-            candiFile.write (string + '\n')
+            candiFile.write (string + '\n')"""
     bahanBangunanFile = open ("bahan_bangunan.csv", 'w') #digunakan untuk membuka file bahan bangunan
-    bahanBangunanFile.write ("nama;deskripsi;jumlah\n") #menulis file
+    lenBahanList, bahanList = deleteUser('', lenBahanList, bahanList)
+    bahanBangunanFile.write(makeStr(lenBahanList, bahanList, 3))
+    """bahanBangunanFile.write ("nama;deskripsi;jumlah\n") #menulis file
     for i in range (lenBahanList):
         if bahanList != ("", "", ""):
             string = bahanList [i][0] + ';' + bahanList [i][1] + ';' + str (bahanList [i][2])
-            bahanBangunanFile.write(string+"\n")
+            bahanBangunanFile.write(string+"\n")"""
     userFile = open ("user.csv", 'w') #digunakan untuk membuka file user 
-    userFile.write ("username;password;role\n") #menulis file
+    userFile.write(makeStr(userNeff, userList, 3, False))
+    """userFile.write ("username;password;role\n") #menulis file
     for i in range (userNeff):
         if userList [i] != ("", "", ""):
             string = userList [i][0] + ';' + userList [i][1] + ';' + userList[i][2]
-            userFile.write (string + "\n")
+            userFile.write (string + "\n")"""
     userFile.close() #digunakan untuk menutup file user
     candiFile.close() #untuk menutup file candi
     bahanBangunanFile.close() #untuk menutup file bahan bangunan

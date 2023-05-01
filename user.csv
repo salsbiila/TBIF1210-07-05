@@ -1,10 +1,5 @@
 username;password;role
 Bondowoso;cintaroro;bandung_bondowoso
 Roro;gasukabondo;roro_jonggrang
-<<<<<<< HEAD
-jin01;jin01;jin_pengumpul
-jin02;jin02;jin_pengumpul
-jin03;jin03;jin_pembangun
-jin04;jin04;jin_pembangun
-=======
->>>>>>> 104cdea2619edc292cc24edfed0c224c3de416d2
+admin;admin;jin_pengumpul
+admin2;admin;jin_pembangun
