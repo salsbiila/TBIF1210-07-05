@@ -13,7 +13,7 @@ def ubahJin(dataSum, dataList, role):
                     row = i
             
             if dataList[row][2] == 'jin_pengumpul':
-                userInput = input(f'Jin ini bertipe “Pengumpul”. Yakin ingin mengubah ke tipe “Pembangun” (Y/N)? ')
+                userInput = input('Jin ini bertipe “Pengumpul”. Yakin ingin mengubah ke tipe “Pembangun” (Y/N)? ')
                 
                 if userInput == 'Y':
                     newDataList = switchRole(row, dataSum, dataList)

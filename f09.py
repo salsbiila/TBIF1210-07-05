@@ -15,7 +15,7 @@ def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalis
             jinTrajin = "Z"
             if pan(listjin,listjin[i]) > max:
                 max = pan(listjin,listjin[i])
-                if cariIdx(urutan, listjin[i][0]) <= cariIdx(urutan, jinTrajin[0]):
+                if lowercase(listjin[i]) < lowercase(jinTrajin):
                     jinTrajin = listjin[i]
 
         for i in range(leng(listjin)):
@@ -23,7 +23,7 @@ def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalis
             jinPmalas = "A"
             if pan(listjin,i) < min:
                 min = pan(listjin,i)
-                if cariIdx(urutan, listjin[i][0]) >= cariIdx(urutan, jinTrajin[0]):
+                if lowercase(listjin[i]) > lowercase(jinTrajin):
                     jinPmalas = listjin[i]
 
     jinPembangun = 0

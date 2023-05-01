@@ -154,9 +154,9 @@ def leng(l):
     return c
 
 def uang(l):
-    c = leng(l) - 1
+    c = len(l) - 1
     hasil = ""
-    for i in range(leng(l)):
+    for i in range(len(l)):
         if c % 3 == 0 and i != (leng(l) - 1):
             hasil += l[i] + "."
         else:
@@ -166,13 +166,31 @@ def uang(l):
 
 def pan(l,x):
     c = 1
+    for i in range(len(l)):
+        if l[i] == x:
+            c += 1
+    return c
+
+def panj(l,x):
+    c = 1
     for i in range(leng(l)):
         if l[i] == x:
             c += 1
     return c
 
 def cariIdx(l,x):
-    for i in range(leng(l)):
+    for i in range(len(l)):
         if l[i] == x:
             index = i
     return index
+
+def lowercase(string):
+    hurufkecil = "abcdefghijklmnopqrstuvwxyz"
+    hurufbesar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    str = ""
+    for i in range(len(string)):
+        if pan(hurufbesar, string[i]) > 1:
+            str += hurufkecil[cariIdx(hurufbesar, string[i])]
+        else:
+            str += string[i]
+    return str
