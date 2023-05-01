@@ -157,7 +157,7 @@ def uang(l):
     c = len(l) - 1
     hasil = ""
     for i in range(len(l)):
-        if c % 3 == 0 and i != (leng(l) - 1):
+        if c % 3 == 0 and i != (len(l) - 1):
             hasil += l[i] + "."
         else:
             hasil += l[i]
