@@ -27,5 +27,7 @@ def bangun_candi(bahan, candi, jumlah_candi,nama):
         print(f"Sisa candi yang perlu dibangun: {100 - jumlah_candi+2}.")
         print(candi)
         return candi, jumlah_candi, bahan
-
-
+    
+    else:
+        print('Bahan bangunan tidak mencukupi.')
+        print('Candi tidak bisa dibangun!')

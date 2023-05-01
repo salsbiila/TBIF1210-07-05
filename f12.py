@@ -1,4 +1,4 @@
-from module import Bacafile
+from module import *
 
 def ayamberkokok(datasum):
     jumlah = datasum - 1

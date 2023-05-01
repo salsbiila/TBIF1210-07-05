@@ -100,7 +100,8 @@ while playing:
             if role != "bandung_bondowoso":
                 print("Pemain tidak memiliki kemampuan ini")
             else:
-                kumpul (bahanDataList, userDataList, userDataSum)
+                bahanDataList = kumpul (bahanDataList, bahanDataSum, userDataList, userDataSum)
+                bahanDataSum = 4
                 print(bahanDataList)
 
         elif userInput == 'batchbangun': #F08
