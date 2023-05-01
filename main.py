@@ -42,15 +42,15 @@ while playing:
         role, namajin = login (userDataList, userDataSum,role, namajin)
     
     elif userInput == 'summonjin':    #F03
-        userDataList = summonJin(userDataSum, userDataList)
+        userDataList = summonJin(userDataSum, userDataList, role)
         userDataSum += 1
         print(userDataList)
     
     elif userInput == 'hapusjin':   #F04
-        userDataSum, userDataList, candiDataSum, candiDataList = hapusJin(userDataSum, userDataList, candiDataSum, candiDataList)
+        userDataSum, userDataList, candiDataSum, candiDataList = hapusJin(userDataSum, userDataList, candiDataSum, candiDataList, role)
     
     elif userInput == 'ubahjin':    #F05
-        userDataList = ubahJin(userDataSum, userDataList)
+        userDataList = ubahJin(userDataSum, userDataList, role)
         print(userDataList)
     
     elif userInput == 'bangun': #F06

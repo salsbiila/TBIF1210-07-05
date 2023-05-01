@@ -26,18 +26,10 @@ def makeList(file, delim = ';'): # hanya untuk membuat list pertama
     currentLength = 1
     for letter in file:
         if letter == delim:
-            print('pisah')
-            print(row)
-            print(idx)
-            print()
             listData[row][idx] = data
             data = ''
             idx += 1
         elif letter == '\n':
-            print('line baru')
-            print(row)
-            print(idx)
-            print()
             listData[row][idx] = data
             data = ''
             row += 1
