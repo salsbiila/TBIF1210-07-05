@@ -1,10 +1,11 @@
 from module import *
 
 def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalistuser, datasumuser, urutan):
-    listjin = ["" for x in range((datasumcandi))]
+    listjin = ["" for x in range((datasumcandi-2))]
 
-    for i in range(1,datasumcandi - 1):
+    for i in range(1,datasumcandi - 2):
         listjin[i] = datalistcandi[i][1]
+    print(listjin)
 
     if datasumcandi == 2:
         jinTrajin = "-"
@@ -17,13 +18,14 @@ def laporanjin(datalistcandi, datalistbahan, datasumbahan, datasumcandi, datalis
                 max = pan(listjin,listjin[i])
                 if lowercase(listjin[i]) < lowercase(jinTrajin):
                     jinTrajin = listjin[i]
-
+            print(jinTrajin)
+        print(max)
         for i in range(leng(listjin)):
             min = max
             jinPmalas = "A"
             if pan(listjin,i) < min:
                 min = pan(listjin,i)
-                if lowercase(listjin[i]) > lowercase(jinTrajin):
+                if lowercase(listjin[i]) > lowercase(jinPmalas):
                     jinPmalas = listjin[i]
 
     jinPembangun = 0
