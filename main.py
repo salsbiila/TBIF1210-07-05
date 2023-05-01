@@ -111,7 +111,7 @@ while playing:
             if role != "bandung_bondowoso":
                 print("Pemain tidak memiliki kemampuan ini")
             else:
-                laporanjin (candiDataList, bahanDataList, candiDataSum, userDataList, userDataSum, Urutanleksikal)
+                laporanjin (candiDataList, bahanDataList, bahanDataSum, candiDataSum, userDataList, userDataSum, Urutanleksikal)
         
         elif userInput == 'laporancandi': #F10
             if role != "bandung_bondowoso":
