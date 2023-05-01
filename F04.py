@@ -15,6 +15,9 @@ def hapusJin(userDataSum, userDataList, candiDataSum, candiDataList, role):
                 print('Jin telah berhasil dihapus dari alam gaib.')
 
                 return newUserSum, newUserDataList, newCandiSum, newCandiDataList
+            else:
+                return userDataSum, userDataList, candiDataSum, candiDataList
+
         else:
             print()
             print('Tidak ada jin dengan username tersebut.')

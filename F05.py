@@ -18,11 +18,17 @@ def ubahJin(dataSum, dataList, role):
                 if userInput == 'Y':
                     newDataList = switchRole(row, dataSum, dataList)
                 
+                else:
+                    return dataList
+                
             elif dataList[row][2] == 'jin_pembangun':
                 userInput = input('Jin ini bertipe “Pembangun”. Yakin ingin mengubah ke tipe “Pengumpul” (Y/N)? ')
 
                 if userInput == 'Y':
                     newDataList = switchRole(row, dataSum, dataList)
+
+                else:
+                    return dataList
 
             print()
             print('Jin telah berhasil diubah.')

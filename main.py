@@ -74,22 +74,18 @@ while playing:
         elif userInput == 'summonjin':    #F03
             userDataList = summonJin(userDataSum, userDataList, role)
             userDataSum += 1
-            print(userDataList)
         
         elif userInput == 'hapusjin':   #F04
             userDataSum, userDataList, candiDataSum, candiDataList = hapusJin(userDataSum, userDataList, candiDataSum, candiDataList, role)
         
         elif userInput == 'ubahjin':    #F05
             userDataList = ubahJin(userDataSum, userDataList, role)
-            print(userDataList)
         
         elif userInput == 'bangun': #F06
             if role != "jin_pembangun":
                 print("Pemain tidak memiliki kemampuan ini")
             else:
                 candiDataList, candiDataSum, bahanDataList = bangun_candi (bahanDataList, candiDataList, candiDataSum, namajin)
-                print(bahanDataList)
-                print(candiDataList, candiDataSum)
 
         elif userInput == 'kumpul': #F07
             if role != "jin_pengumpul":
@@ -97,7 +93,6 @@ while playing:
             else:
                 bahanDataList = kumpul_candi (bahanDataList, bahanDataSum)
                 bahanDataSum = 4
-                print(bahanDataList)
 
         elif userInput == 'batchkumpul': #F08
             if role != "bandung_bondowoso":
@@ -105,15 +100,12 @@ while playing:
             else:
                 bahanDataList = kumpul (bahanDataList, bahanDataSum, userDataList, userDataSum)
                 bahanDataSum = 4
-                print(bahanDataList)
 
         elif userInput == 'batchbangun': #F08
             if role != "bandung_bondowoso":
                 print("Pemain tidak memiliki kemampuan ini")
             else:
                 candiDataList, candiDataSum = bangun (bahanDataList, candiDataList, candiDataSum, userDataList, userDataSum)
-                print(bahanDataList)
-                print(candiDataList, candiDataSum)
         
         elif userInput == 'laporanjin': #F09
             if role != "bandung_bondowoso":

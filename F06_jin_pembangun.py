@@ -14,7 +14,7 @@ def bangun_candi(bahan, candi, jumlah_candi,nama):
     batu = random.randint (1,5)
     air = random.randint (1,5)
     
-    if pasir <= bahan [1][2] and batu <= bahan [2][2] and air <= bahan [3][2]:   
+    if pasir <= (bahan [1][2]) and batu <= bahan [2][2] and air <= bahan [3][2]:   
         print(f"Candi berhasil dibangun dengan {pasir} pasir, {batu} batu, {air} air")
         bahan [1][2] -= pasir  
         bahan [2][2] -= batu  
@@ -25,9 +25,11 @@ def bangun_candi(bahan, candi, jumlah_candi,nama):
         candi = ubah_candi(pasir, batu, air, candi, jumlah_candi, nama)
         jumlah_candi += 1
         print(f"Sisa candi yang perlu dibangun: {100 - jumlah_candi+2}.")
-        print(candi)
+
         return candi, jumlah_candi, bahan
     
     else:
         print('Bahan bangunan tidak mencukupi.')
         print('Candi tidak bisa dibangun!')
+
+        return candi, jumlah_candi, bahan
