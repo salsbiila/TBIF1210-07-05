@@ -47,7 +47,7 @@ while playing:
     if isLoggedIn == False:
 
         if userInput == 'login':    #F01
-            role, namajin, isLoggedIn = login (userDataList, userDataSum,role, namajin, isLoggedIn)
+            role, namajin, isLoggedIn = login (userDataList, userDataSum, role, namajin, isLoggedIn)
 
         elif userInput == 'logout':
             logout(isLoggedIn)
@@ -64,7 +64,10 @@ while playing:
             print ("Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout")
     
     else:
-        if userInput == 'logout':
+        if userInput == 'login':
+            role, namajin, isLoggedIn = login(userDataList, userDataList, role, namajin, isLoggedIn)
+        
+        elif userInput == 'logout':
             logout(isLoggedIn)
             isLoggedIn = False
     

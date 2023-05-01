@@ -24,5 +24,5 @@ def login (user, sumlist, role, namajin, is_login):
             print ("Username salah!")
     else :
         print ("Login gagal !")
-        print ("Anda telah login dengan username" + username + ', , silakan lakukan "logout" sebelum melakukan login kembali.')
+        print ("Anda telah login dengan username " + namajin + ', , silakan lakukan "logout" sebelum melakukan login kembali.')
     return role,namajin, is_login
